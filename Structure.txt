@@ -1,0 +1,21 @@
+                                                        structure de la gallery
+
+
+                                                        active : false 
+                                                        date  : 12233 
+                                                        description : “ ma description “
+                                                        photo : “url
+                                                        user : “uid”
+                                                        structure favoris 
+
+
+                                                        gallery : “ galleryID” 
+                                                        user : “userID”
+
+
+                                                        structure de la user
+
+
+                                                        email: "test@test.com"
+                                                        nom : "dope boy "
+
