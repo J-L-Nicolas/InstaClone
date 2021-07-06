@@ -65,7 +65,7 @@ const Login = () => {
                     style={styles.input}
                     onChangeText={(e)=>{setlogin(e); setMsgError(null)}}
                     value={login}
-                    onPressIn={connexion}
+                    onSubmitEditing={connexion}
                 />
                  <TextInput
                  placeholder="Password"
@@ -73,7 +73,7 @@ const Login = () => {
                     style={styles.input}
                     onChangeText={(e)=>{setpassword(e); setMsgError(null)}}
                     value={password}
-                    onPressIn={connexion}
+                    onSubmitEditing={connexion}
                 />
                 <Pressable style={styles.btn} onPress={connexion}>
                     <Text style={{color: "#FFFFFF"}}>Connexion</Text>
