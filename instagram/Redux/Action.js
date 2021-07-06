@@ -13,6 +13,9 @@ const type = {
     /* component EXEMPLE */
     EXEMPLE_ACTION: "EXEMPLE_ACTION",
 
+    /* component Contact */
+    CONTACTS_ADD_CONTACT: "CONTACTS_ADD_CONTACT"
+
 }
 
 export {type}

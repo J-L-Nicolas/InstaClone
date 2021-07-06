@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 /* import redux */
-import { useSelector } from 'react-redux'
+import { useSelector , useDispatch } from 'react-redux'
+import Action, {type} from './Redux/Action'
 
 /* import components */
 import Hedaer from './components/Header'
@@ -10,31 +11,24 @@ import Login from './components/Login'
 
 const App = () => {
 
+  /* init const redux */
   const Firebase = useSelector(state => state.Firebase)
-
-  Firebase.queryGallery().onSnapshot(query => {
-      
-    query.forEach(element => {
-
-        console.log(element.data())
-    });
-  })
+  const dispatch = useDispatch()
 
   useEffect(() => {
 
-    // Firebase.register("lion@live.fr","123456").then(resul => {
+    Firebase.contactsGallery().onSnapshot(query => {
 
-    //   console.log(resul)
-    // }).catch( error => {
+      let TempContact = []
+      
+      query.forEach(element => {
+  
+        TempContact = [...TempContact, element.data()]
+      });
+      dispatch(Action(type.CONTACTS_ADD_CONTACT, TempContact))
 
-    //   console.log(error)
-    // })
-
+    })
   }, [])
-
-  
-
-  
 
   return (
     <View style={{flex: 1}}>
