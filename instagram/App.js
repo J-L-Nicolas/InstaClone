@@ -8,6 +8,7 @@ import Action, {type} from './Redux/Action'
 /* import components */
 import Hedaer from './components/Header'
 import Login from './components/Login'
+import Feed from './components/Feed'
 
 const App = () => {
 
@@ -23,7 +24,7 @@ const App = () => {
       
       query.forEach(element => {
   
-        TempContact = [...TempContact, element.data()]
+        TempContact = [...TempContact, {id: element.id ,...element.data()}]
       });
       dispatch(Action(type.CONTACTS_ADD_CONTACT, TempContact))
 
@@ -32,7 +33,7 @@ const App = () => {
 
   return (
     <View style={{flex: 1}}>
-      <Login/>
+      <Feed/>
     </View>
   )
 }
