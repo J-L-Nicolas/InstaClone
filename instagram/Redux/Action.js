@@ -1,9 +1,18 @@
-/*  --- liste type action --- */
-const Action = {
+const Action = (type, value) => ({
+    
+    type,
+    payload: value
+})
 
-    /* components Map */
-    MAP_READ_POSITION: "MAP_READ_POSITION",
-    MAP_LOOK_POSITION: "MAP_LOOK_POSITION"
+export default Action
+
+
+/*  --- liste type action --- */
+const type = {
+
+    /* component EXEMPLE */
+    EXEMPLE_ACTION: "EXEMPLE_ACTION",
 
 }
-export default Action
+
+export {type}

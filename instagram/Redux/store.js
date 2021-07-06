@@ -1,10 +1,12 @@
 import { createStore, combineReducers } from "redux";
 
 /* import Rducers */
-import map from './Reduser/map'
+import Exemple from './Reduser/Exemple'
+
+
 
 const store = combineReducers({
-    map
+    Exemple
 })
 
 export default createStore(store);
