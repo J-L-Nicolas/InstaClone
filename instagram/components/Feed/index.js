@@ -26,6 +26,7 @@ const Feed = () => {
         const feedItems = items.item
         return(
             <View style={styles.feedItemBody}>
+                
                 <Image source={{uri: feedItems.photo}} style={styles.bgFeedItem}/>
             </View>
         )
