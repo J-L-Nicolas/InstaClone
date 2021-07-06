@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 
 /* import components */
 import Hedaer from './components/Header'
+import Login from './components/Login'
 
 const App = () => {
 
@@ -20,9 +21,8 @@ const App = () => {
   })
 
   return (
-    <View>
-      <Hedaer/>
-      <Text>Coucou</Text>
+    <View style={{flex: 1}}>
+      <Login/>
     </View>
   )
 }

@@ -1,14 +1,50 @@
-import React, {useState} from 'react'
+import React, {useState , useEffect} from 'react'
 import { View, Text, Image,  TextInput , Button , Pressable } from 'react-native'
 import styles from './styles'
 
+/* import redux */
+import { useSelector } from 'react-redux'
+
 const Login = () => {
+
+    /* selector */
+    const Firebase = useSelector(state => state.Firebase)
+
+    /* Effect */
+    useEffect(() => {
+
+        setMsgError(null)
+
+    }, [login, password])
 
     /* state */
     const [login, setlogin] = useState("")
     const [password, setpassword] = useState("")
+    const [msgError, setMsgError] = useState(null)
 
-    return (
+    /* function */
+    const connexion = () => {
+
+        if (login != "" && password != ""){
+
+            Firebase.register(login, password).then(result => {
+
+                console.log(result)
+            }).catch(error => {
+
+                setMsgError(error)
+            })
+            setpassword("")
+        }
+    }
+    
+    /* display msg Eroor */
+    const DisplayError = msgError && (
+        <Text>{msgError.message}</Text>
+    )
+    
+
+    return ( 
         <View style={styles.bodyLogin}>
          
             <Image
@@ -25,20 +61,24 @@ const Login = () => {
 
             <View style={styles.bodyForm}>
                 <TextInput
-                    placeholder="Login"
+                    placeholder="Email"
                     style={styles.input}
-                    onChangeText={setlogin}
+                    onChangeText={(e)=>{setlogin(e); setMsgError(null)}}
                     value={login}
+                    onPressIn={connexion}
                 />
                  <TextInput
                  placeholder="Password"
+                 secureTextEntry={true}
                     style={styles.input}
-                    onChangeText={setpassword}
+                    onChangeText={(e)=>{setpassword(e); setMsgError(null)}}
                     value={password}
+                    onPressIn={connexion}
                 />
-                <Pressable style={styles.btn}>
-                    <Text>Connexion</Text>
+                <Pressable style={styles.btn} onPress={connexion}>
+                    <Text style={{color: "#FFFFFF"}}>Connexion</Text>
                 </Pressable>
+                {DisplayError}
             </View>
          
         </View>
