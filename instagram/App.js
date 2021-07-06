@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { View, Text } from 'react-native'
 
 /* import redux */
@@ -19,6 +19,22 @@ const App = () => {
         console.log(element.data())
     });
   })
+
+  useEffect(() => {
+
+    // Firebase.register("lion@live.fr","123456").then(resul => {
+
+    //   console.log(resul)
+    // }).catch( error => {
+
+    //   console.log(error)
+    // })
+
+  }, [])
+
+  
+
+  
 
   return (
     <View style={{flex: 1}}>
