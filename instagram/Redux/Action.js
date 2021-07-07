@@ -16,6 +16,9 @@ const type = {
     /* component Contact */
     CONTACTS_ADD_CONTACT: "CONTACTS_ADD_CONTACT",
 
+    /* component Contact */
+    FEED_ACTION: "FEED_ACTION",
+
 }
 
 export {type}

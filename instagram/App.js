@@ -8,6 +8,7 @@ import Action, {type} from './Redux/Action'
 /* import components */
 import Hedaer from './components/Header'
 import Login from './components/Login'
+import Feed from './components/Feed'
 
 const App = () => {
 
@@ -32,7 +33,7 @@ const App = () => {
 
   return (
     <View style={{flex: 1}}>
-     <Hedaer/>
+     <Feed/>
      
     </View>
   )
