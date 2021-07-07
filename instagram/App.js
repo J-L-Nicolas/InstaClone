@@ -8,6 +8,7 @@ import Action, {type} from './Redux/Action'
 /* import components */
 import Hedaer from './components/Header'
 import Login from './components/Login'
+import Register from './components/Register'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
   
         TempContact = [...TempContact, {id: element.id ,...element.data()}]
       });
+      console.log("TempContact", TempContact)
       dispatch(Action(type.CONTACTS_ADD_CONTACT, TempContact))
 
     })
@@ -32,8 +34,7 @@ const App = () => {
 
   return (
     <View style={{flex: 1}}>
-     <Hedaer/>
-     
+     <Login/>
     </View>
   )
 }

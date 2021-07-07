@@ -5,31 +5,42 @@ import styles from './styles'
 /* import redux */
 import { useSelector } from 'react-redux'
 
-const Login = () => {
+const Register = () => {
 
     /* selector */
     const Firebase = useSelector(state => state.Firebase)
-    
+
     /* Effect */
     useEffect(() => {
 
         setMsgError(null)
 
-    }, [login, password])
+    }, [email, password])
 
     /* state */
-    const [login, setlogin] = useState("")
+    const [name, setName] = useState("")
+    const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [msgError, setMsgError] = useState(null)
 
     /* function */
     const connexion = () => {
 
-        if (login != "" && password != ""){
+        if (email != "" && password != "" && name != ""){
 
-            Firebase.login(login, password).then(result => {
+            Firebase.register(email, password).then(result => {
 
-                console.log(result)
+                const tempId = result.uid
+                
+                Firebase.contactsGallery().doc(tempId).set(
+                   {
+                    avatar_url:"https://firebasestorage.googleapis.com/v0/b/food-app-2da2f.appspot.com/o/images%2F2kK3KhLjRQZcu4HvTp78%2Fimage.jpg?alt=media&token=04354a80-7a42-4088-9dfe-f99144d98686",
+                    favoris: true,
+                    name: name,
+                    subtitle: "new user" 
+                   } 
+                )
+
             }).catch(error => {
 
                 setMsgError(error)
@@ -45,10 +56,10 @@ const Login = () => {
     
 
     return ( 
-        <View style={styles.bodyLogin}>
+        <View style={styles.bodyRegister}>
          
             <Image
-                source={require('../../Assets/Images/bg_login.jpg')}
+                source={require('../../Assets/Images/bg_register.jpg')}
             />
 
             <View style={styles.bodyLogo}>
@@ -60,12 +71,18 @@ const Login = () => {
             </View>
 
             <View style={styles.bodyForm}>
-              
+                <TextInput
+                    placeholder="Name"
+                    style={styles.input}
+                    onChangeText={(e)=>{setName(e); setMsgError(null)}}
+                    value={name}
+                    onSubmitEditing={connexion}
+                />
                 <TextInput
                     placeholder="Email"
                     style={styles.input}
-                    onChangeText={(e)=>{setlogin(e); setMsgError(null)}}
-                    value={login}
+                    onChangeText={(e)=>{setemail(e); setMsgError(null)}}
+                    value={email}
                     onSubmitEditing={connexion}
                 />
                  <TextInput
@@ -77,7 +94,7 @@ const Login = () => {
                     onSubmitEditing={connexion}
                 />
                 <Pressable style={styles.btn} onPress={connexion}>
-                    <Text style={{color: "#FFFFFF"}}>Connexion</Text>
+                    <Text style={{color: "#FFFFFF"}}>Register</Text>
                 </Pressable>
                 {DisplayError}
             </View>
@@ -86,4 +103,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register
