@@ -33,6 +33,7 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
      <Hedaer/>
+     
     </View>
   )
 }
