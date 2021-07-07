@@ -1,4 +1,4 @@
-const initState = null
+const initState = 89
 
 const Exemple = (state = initState, action) => {
 

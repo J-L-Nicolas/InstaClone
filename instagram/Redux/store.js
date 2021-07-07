@@ -6,10 +6,12 @@ import Firebase from './Reduser/Firebase'
 import Contacts from './Reduser/Contacts'
 
 
+
 const store = combineReducers({
     Exemple,
     Firebase,
-    Contacts
+    Contacts,
+   
 
 })
 

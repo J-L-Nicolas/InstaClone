@@ -14,7 +14,7 @@ const type = {
     EXEMPLE_ACTION: "EXEMPLE_ACTION",
 
     /* component Contact */
-    CONTACTS_ADD_CONTACT: "CONTACTS_ADD_CONTACT"
+    CONTACTS_ADD_CONTACT: "CONTACTS_ADD_CONTACT",
 
 }
 
