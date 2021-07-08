@@ -66,7 +66,6 @@ const Register = () => {
         <Text>{msgError.message}</Text>
     )
     
-
     return ( 
         <View style={styles.bodyRegister}>
          
