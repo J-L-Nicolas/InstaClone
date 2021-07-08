@@ -73,7 +73,7 @@ const style = StyleSheet.create({
      color:"#FFF"   
     },
     StyleFavorite:{
-        color:"#FFF",
+        // color:"#FFF",
         marginStart:10
     }
 
