@@ -8,7 +8,11 @@ import Action, {type} from './Redux/Action'
 /* import components */
 import Header from './components/Header'
 import Login from './components/Login'
+<<<<<<< HEAD
 import Feed from './components/Feed'
+=======
+import Register from './components/Register'
+>>>>>>> 0827344c0fa8f46cc9303ba859955d3eea91ddf0
 
 const App = () => {
 
@@ -29,6 +33,7 @@ const App = () => {
   
         TempContact = [...TempContact, {id: element.id ,...element.data()}]
       });
+      console.log("TempContact", TempContact)
       dispatch(Action(type.CONTACTS_ADD_CONTACT, TempContact))
 
       //fin de la requte d'affichage des contacts 
@@ -58,8 +63,12 @@ const App = () => {
 
   return (
     <View style={{flex: 1}}>
+<<<<<<< HEAD
       {/* <Header/> */}
       <Feed/>
+=======
+     <Login/>
+>>>>>>> 0827344c0fa8f46cc9303ba859955d3eea91ddf0
     </View>
   )
 }

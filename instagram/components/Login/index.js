@@ -9,7 +9,7 @@ const Login = () => {
 
     /* selector */
     const Firebase = useSelector(state => state.Firebase)
-
+    
     /* Effect */
     useEffect(() => {
 
@@ -27,7 +27,7 @@ const Login = () => {
 
         if (login != "" && password != ""){
 
-            Firebase.register(login, password).then(result => {
+            Firebase.login(login, password).then(result => {
 
                 console.log(result)
             }).catch(error => {
@@ -60,6 +60,7 @@ const Login = () => {
             </View>
 
             <View style={styles.bodyForm}>
+              
                 <TextInput
                     placeholder="Email"
                     style={styles.input}

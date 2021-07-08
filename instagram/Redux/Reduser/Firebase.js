@@ -9,7 +9,9 @@ const initState = {
     contactsGallery: contactsGallery = () => firestore().collection("contacts"),
     
     /* auth */
-    register: register = (email, password) => auth().createUserWithEmailAndPassword(email, password)
+    auth: auth(),
+    register: register = (email, password) => auth().createUserWithEmailAndPassword(email, password),
+    login: login = (email, password) => auth().signInWithEmailAndPassword(email, password),
 }
 
 const Exemple = (state = initState, action) => {
