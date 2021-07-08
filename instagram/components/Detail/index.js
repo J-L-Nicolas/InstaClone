@@ -20,8 +20,6 @@ const detail = () => {
 
     const [text, onChangeText] = React.useState(null);
 
-    console.log("lol", Comments)
-
     // user du commentaire + commentaire;
 
     const test = () => {
@@ -73,11 +71,6 @@ const detail = () => {
             <View style={styles.margin}>
                 <Text style={styles.textGris}> Voir tout les commentaires</Text>
 
-                <FlatList
-                    data={Comments}
-                    renderItem={renderItem}
-                    keyExtractor={item => item.id}
-                />
                 <View>
                     <View style={styles.horizontal}>
                         <Text style={styles.textGris}> user {user} </Text>
@@ -93,6 +86,11 @@ const detail = () => {
                         
                     </View>
                 </View>
+                <FlatList
+                    data={Comments}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id}
+                />
 
                 <View style={styles.publier}>
                     <TextInput

@@ -16,7 +16,6 @@ const initState = {
 
 }
 
-
 const Firebase = (state = initState, action) => {
 
     return state
