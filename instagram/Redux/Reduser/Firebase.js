@@ -5,7 +5,12 @@ import storage from '@react-native-firebase/storage'
 const initState = {
 
     queryGallery: queryGallery = () => firestore().collection("gallery"),
+    queryComment: () => firestore().collection("comment"),
+
+    
 }
+
+// console.log("test firestore", initState.queryComment())
 
 const Exemple = (state = initState, action) => {
 
