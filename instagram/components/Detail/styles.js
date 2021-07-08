@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 const style = StyleSheet.create({
 
-    // container : { backgroundColor: '#000000', },
+    container : { backgroundColor: '#000000', },
     bodyDetail: { width          : '100%', },
     flex1     : { flex           : 1, },
     margin    : { margin         : 10 },
