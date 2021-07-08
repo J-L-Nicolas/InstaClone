@@ -10,6 +10,18 @@ const Register = () => {
     /* selector */
     const Firebase = useSelector(state => state.Firebase)
 
+    // useEffect(() => {
+    //     Firebase.queryGallery().doc("4J4tDf8GrK98WVsYXttw").update(
+    //         {
+    //             active : false,
+    //             date: 12233,
+    //             description: "first",
+    //             photo: "https://eko-events.fr/wp-content/uploads/2016/01/eko_events_le_groupe_la_poste-4-min-1.jpg",
+    //             user: "0cXy4XavdwHcyLC54qO3",
+    //         }
+    //      )
+    // }, [])
+
     /* Effect */
     useEffect(() => {
 
@@ -34,7 +46,7 @@ const Register = () => {
                 
                 Firebase.contactsGallery().doc(tempId).set(
                    {
-                    avatar_url:"https://firebasestorage.googleapis.com/v0/b/food-app-2da2f.appspot.com/o/images%2F2kK3KhLjRQZcu4HvTp78%2Fimage.jpg?alt=media&token=04354a80-7a42-4088-9dfe-f99144d98686",
+                    avatar_url:"https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png",
                     favoris: true,
                     name: name,
                     subtitle: "new user" 
@@ -65,7 +77,7 @@ const Register = () => {
             <View style={styles.bodyLogo}>
 
                 <Image style={styles.Logo}
-                    source={require('../../Assets/Images/logo_Insta.png')}
+                source={require('../../Assets/Images/logo_Insta.png')}
                 />
 
             </View>
