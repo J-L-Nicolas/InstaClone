@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useEffect} from 'react'
 import { View } from 'react-native'
 
@@ -13,12 +14,24 @@ import Feed from './components/Feed'
 =======
 import Register from './components/Register'
 >>>>>>> 0827344c0fa8f46cc9303ba859955d3eea91ddf0
+=======
+import React, { useEffect } from 'react'
+import { View } from 'react-native'
+
+/* import redux */
+import { useSelector, useDispatch } from 'react-redux'
+
+/* import components */
+import Detail from './components/Detail'
+import Action, { type } from './Redux/Action'
+>>>>>>> origin/DetailComponent
 
 const App = () => {
 
   /* init const redux */
   const Firebase = useSelector(state => state.Firebase)
   const dispatch = useDispatch()
+<<<<<<< HEAD
   
 
   useEffect(() => {
@@ -69,6 +82,21 @@ const App = () => {
 =======
      <Login/>
 >>>>>>> 0827344c0fa8f46cc9303ba859955d3eea91ddf0
+=======
+
+  useEffect(() => {
+    Firebase.queryComment().onSnapshot(query => {
+      let Comments = []
+      query.forEach(element => { Comments = [...Comments, {id: element.id ,...element.data()}] });
+      
+      dispatch(Action(type.COMMENTS_ADD, Comments))
+    })
+  }, [])
+
+  return (
+    <View>
+      <Detail />
+>>>>>>> origin/DetailComponent
     </View>
   )
 }

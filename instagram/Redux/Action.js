@@ -12,6 +12,7 @@ const type = {
 
     /* component EXEMPLE */
     EXEMPLE_ACTION: "EXEMPLE_ACTION",
+<<<<<<< HEAD
 
     /* component Contact */
     CONTACTS_ADD_CONTACT: "CONTACTS_ADD_CONTACT",
@@ -19,6 +20,11 @@ const type = {
     /* component Contact */
     FEED_ACTION: "FEED_ACTION",
 
+=======
+    DETAIL_ACTION: "DETAIL_ACTION",
+    COMMENTS_ADD: "COMMENTS_ADD",
+    
+>>>>>>> origin/DetailComponent
 }
 
 export {type}
