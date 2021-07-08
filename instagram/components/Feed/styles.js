@@ -29,15 +29,14 @@ const style = StyleSheet.create({
     vue:{
 
         justifyContent: "center",
-        backgroundColor:"black"
+        backgroundColor:"black",
+        flex:1,
 
     },
 
     bodybulle:{
-        alignItems:"center",
-        justifyContent: "center",
-        marginVertical:10,
-        marginTop:130
+        flex:1,
+        alignItems:"center"
     },
 
     bulle:{
@@ -45,7 +44,8 @@ const style = StyleSheet.create({
         width:35,
         height:35,
         marginHorizontal: 5,
-        marginVertical:10
+        marginVertical:10,
+        
     },
 
     AvatarUrl: {

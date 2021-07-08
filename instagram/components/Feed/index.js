@@ -21,7 +21,7 @@ const Feed = () => {
         // console.log(User)
         return(
             
-        <View style={styles.bodybulle}>  
+        <View style={styles.bodybulle} >  
             <Image 
                 source={{   uri :User.item.avatar_url}}  
                 style={styles.bulleContact}
@@ -44,7 +44,7 @@ const Feed = () => {
         
         return(
             
-        <View> 
+        <View style={{flex: 1}}> 
 
            <View style={styles.HeaderPublicationi}>
              <Image 
@@ -53,7 +53,7 @@ const Feed = () => {
             />
 
             <Text 
-            style={styles.TextStyle}>{User.item.user}
+            style={styles.TextStyle}>{urlContact[0].name}
             </Text>
             </View>
 
@@ -78,7 +78,7 @@ const Feed = () => {
         <View 
         style={styles.vue}
         >
-            <View>
+            <View >
                 <FlatList
                     data={ListContact}
                     renderItem={renderItem}
@@ -86,7 +86,7 @@ const Feed = () => {
                     horizontal={true}
                  />
             </View>     
-            <View>
+            <View style={{flex: 1}} >
             <FlatList
                     data={FeedGallery}
                     renderItem={Publication}
