@@ -29,7 +29,7 @@ const style = StyleSheet.create({
     vue:{
 
         justifyContent: "center",
-        backgroundColor:"black",
+        backgroundColor:"#080808f0",
         flex:1,
 
     },

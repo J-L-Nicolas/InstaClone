@@ -63,7 +63,7 @@ const App = () => {
   /* Render */
   return (
     <View style={{flex: 1}}>
-      <Detail/>
+      <Feed/>
     </View>
    )
 
